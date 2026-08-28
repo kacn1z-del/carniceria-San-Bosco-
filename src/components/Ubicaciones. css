@@ -1,0 +1,52 @@
+.ubicaciones {
+  padding: 96px 0;
+  background: var(--paper-alt);
+}
+
+.ubicaciones__title {
+  margin-bottom: 40px;
+}
+
+.ubicaciones__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.ubicacion-card {
+  background: var(--paper);
+  border-radius: 8px;
+  padding: 28px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  border-top: 4px solid var(--terracotta);
+}
+
+.ubicacion-card__mapa {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.ubicacion-card__nombre {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.ubicacion-card p + p {
+  margin-top: 4px;
+}
+
+.ubicacion-card__horario {
+  color: var(--oxblood);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .ubicaciones__grid {
+    grid-template-columns: 1fr;
+  }
+}
