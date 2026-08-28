@@ -1,0 +1,124 @@
+.hero {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+}
+
+.hero__hatch {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--terracotta) 0,
+    var(--terracotta) 2px,
+    transparent 2px,
+    transparent 34px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+  z-index: 2;
+}
+
+.hero__slide--activo {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.hero__content {
+  max-width: 640px;
+  padding-top: 64px;
+  padding-bottom: 88px;
+}
+
+.hero__title {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  margin: 14px 0 22px;
+  color: var(--terracotta);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: 32px;
+  color: rgba(250, 248, 245, 0.85);
+}
+
+.hero__dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 2px solid var(--paper);
+  background: transparent;
+  padding: 0;
+}
+
+.hero__dot--activo {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.hero__badge {
+  position: absolute;
+  right: 5%;
+  bottom: 28px;
+  width: 150px;
+  height: 150px;
+  border-color: var(--terracotta);
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.hero__badge-top {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+}
+
+.hero__badge-main {
+  font-size: 1.25rem;
+  color: var(--terracotta);
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 460px;
+    text-align: center;
+  }
+  .hero__content {
+    max-width: 100%;
+    padding-top: 40px;
+    padding-bottom: 96px;
+  }
+  .hero__subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__badge {
+    display: none;
+  }
+}
