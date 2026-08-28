@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Contacto.css'
 
-const WHATSAPP_NUMBER = '50600000000' // TODO: reemplazar con el número real de San Bosco
+const WHATSAPP_NUMBER = '50663024507'
 
 export default function Contacto() {
   const [form, setForm] = useState({ nombre: '', telefono: '', mensaje: '' })
@@ -34,8 +34,8 @@ export default function Contacto() {
 
           <div className="contacto__datos">
             <div>
-              <span className="contacto__label">Teléfono</span>
-              <span>[+506 0000-0000]</span>
+              <span className="contacto__label">WhatsApp</span>
+              <span>+506 6302-4507</span>
             </div>
             <div>
               <span className="contacto__label">Correo</span>
@@ -44,6 +44,16 @@ export default function Contacto() {
             <div>
               <span className="contacto__label">Horario</span>
               <span>Lun – Sáb: 6:00 a.m. – 5:00 p.m.</span>
+            </div>
+            <div>
+              <span className="contacto__label">Facebook</span>
+              <a
+                href="https://www.facebook.com/share/1BWK8rexQW/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Carnicería San Bosco
+              </a>
             </div>
           </div>
         </div>
