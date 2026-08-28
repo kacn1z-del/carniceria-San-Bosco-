@@ -11,7 +11,12 @@ export default function Footer() {
         </div>
 
         <div className="footer__social">
-          <a href="#" target="_blank" rel="noreferrer" aria-label="Facebook">
+          <a
+            href="https://www.facebook.com/share/1BWK8rexQW/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+          >
             Facebook
           </a>
           <a href="#" target="_blank" rel="noreferrer" aria-label="Instagram">
