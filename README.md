@@ -1,8 +1,7 @@
 # Carnicería San Bosco — Sitio Web
 
-Sitio hecho con **React 19 + Vite**, inspirado en la estructura de Carnes Don
-Fernando, con la identidad de marca de San Bosco (negro #1D1D1C, terracota
-#CA4F16, tipografías Bebas Neue + Nunito).
+Sitio hecho con **React 19 + Vite**, con la identidad de marca de San Bosco
+(negro #1D1D1C, terracota #CA4F16, tipografías Bebas Neue + Nunito).
 
 ## Antes de publicar, reemplazar:
 
