@@ -33,9 +33,14 @@ export default function Productos({ onAddToCart, categoriaActiva, onCambiarCateg
         <div className="productos__grid">
           {visibles.map((producto) => (
             <article className="producto-card" key={producto.id}>
-              <div className="producto-card__media" aria-hidden="true">
+              <div className="producto-card__media">
                 <span className="producto-card__destacado">Destacado</span>
-                <span>Foto</span>
+                <img
+                  src={producto.imagen}
+                  alt={producto.nombre}
+                  className="producto-card__img"
+                  loading="lazy"
+                />
                 <div className="producto-card__sello sello">{producto.corte}</div>
               </div>
               <div className="producto-card__body">
