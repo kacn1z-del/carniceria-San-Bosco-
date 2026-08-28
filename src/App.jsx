@@ -12,6 +12,7 @@ import CartDrawer from './components/CartDrawer.jsx'
 export default function App() {
   const [cart, setCart] = useState([])
   const [cartAbierto, setCartAbierto] = useState(false)
+  const [categoriaActiva, setCategoriaActiva] = useState('Todos')
 
   const agregarAlCarrito = (producto) => {
     setCart((prev) => {
@@ -46,9 +47,13 @@ export default function App() {
     <>
       <Header cartCount={cartCount} onOpenCart={() => setCartAbierto(true)} />
       <main>
-        <Hero />
+        <Hero onSelectCategoria={setCategoriaActiva} />
         <Historia />
-        <Productos onAddToCart={agregarAlCarrito} />
+        <Productos
+          onAddToCart={agregarAlCarrito}
+          categoriaActiva={categoriaActiva}
+          onCambiarCategoria={setCategoriaActiva}
+        />
         <VisionMision />
         <Ubicaciones />
         <Contacto />
