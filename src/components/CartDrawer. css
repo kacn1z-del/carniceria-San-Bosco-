@@ -1,0 +1,141 @@
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(29, 29, 28, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  z-index: 90;
+}
+
+.cart-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(400px, 100%);
+  background: var(--paper);
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+}
+
+.cart-drawer--abierto {
+  transform: translateX(0);
+}
+
+.cart-drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 3px solid var(--terracotta);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.cart-drawer__head h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+}
+
+.cart-drawer__cerrar {
+  background: transparent;
+  border: none;
+  color: var(--paper);
+  font-size: 1.2rem;
+}
+
+.cart-drawer__vacio {
+  padding: 32px 24px;
+  color: rgba(29, 29, 28, 0.6);
+}
+
+.cart-drawer__lista {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-item__nombre {
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.cart-item__presentacion {
+  font-size: 0.78rem;
+  color: rgba(29, 29, 28, 0.55);
+}
+
+.cart-item__cantidad {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.cart-item__cantidad button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  background: transparent;
+  line-height: 1;
+}
+
+.cart-item__precio {
+  font-weight: 800;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.cart-item__quitar {
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.cart-drawer__footer {
+  padding: 20px 24px 24px;
+  border-top: 2px solid var(--line);
+}
+
+.cart-drawer__total {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.cart-drawer__checkout {
+  width: 100%;
+  justify-content: center;
+  border: none;
+}
+
+.cart-drawer__checkout--deshabilitado {
+  opacity: 0.5;
+  pointer-events: none;
+}
