@@ -1,0 +1,158 @@
+.productos {
+  padding: 96px 0;
+  background: var(--paper-alt);
+}
+
+.productos__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.productos__filtros {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.productos__filtro {
+  background: transparent;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.productos__filtro--activo,
+.productos__filtro:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.productos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.producto-card {
+  background: var(--paper);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(29, 29, 28, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-card__media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--bone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(29, 29, 28, 0.4);
+  font-weight: 700;
+}
+
+.producto-card__destacado {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--terracotta);
+  color: var(--paper);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.producto-card__sello {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 62px;
+  height: 62px;
+  font-size: 0.55rem;
+  color: var(--oxblood);
+  background: var(--paper);
+}
+
+.producto-card__body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.producto-card__cat {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--terracotta);
+  text-transform: uppercase;
+}
+
+.producto-card__nombre {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+}
+
+.producto-card__presentacion {
+  font-size: 0.88rem;
+  color: rgba(29, 29, 28, 0.6);
+  margin-bottom: 8px;
+}
+
+.producto-card__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.producto-card__precio {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--ink);
+}
+
+.producto-card__btn {
+  padding: 9px 16px;
+  font-size: 0.85rem;
+}
+
+.productos__nota {
+  margin-top: 28px;
+  font-size: 0.82rem;
+  color: rgba(29, 29, 28, 0.5);
+  font-style: italic;
+}
+
+@media (max-width: 980px) {
+  .productos__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .productos__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .producto-card__body {
+    padding: 12px;
+  }
+}
