@@ -3,12 +3,12 @@ import './Hero.css'
 
 // Contenido de ejemplo — reemplazar con fotos reales de cortes/local.
 const SLIDES = [
-  { titulo: 'CORTES DE RES', enlace: '#productos' },
-  { titulo: 'CORTES DE CERDO', enlace: '#productos' },
-  { titulo: 'CORTES DE POLLO', enlace: '#productos' },
+  { titulo: 'CORTES DE RES', categoria: 'Res' },
+  { titulo: 'CORTES DE CERDO', categoria: 'Cerdo' },
+  { titulo: 'CORTES DE POLLO', categoria: 'Pollo' },
 ]
 
-export default function Hero() {
+export default function Hero({ onSelectCategoria }) {
   const [activo, setActivo] = useState(0)
 
   useEffect(() => {
@@ -17,6 +17,11 @@ export default function Hero() {
     }, 5000)
     return () => clearInterval(id)
   }, [])
+
+  const irAProductos = (categoria) => {
+    onSelectCategoria(categoria)
+    document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <section id="top" className="hero">
@@ -35,9 +40,12 @@ export default function Hero() {
               Tradición carnicera costarricense hecha oficio: selección, corte y
               despacho artesanal para la mesa de tu familia.
             </p>
-            <a href={slide.enlace} className="btn btn--terracotta">
+            <button
+              className="btn btn--terracotta"
+              onClick={() => irAProductos(slide.categoria)}
+            >
               Compre Aquí
-            </a>
+            </button>
           </div>
         </div>
       ))}
