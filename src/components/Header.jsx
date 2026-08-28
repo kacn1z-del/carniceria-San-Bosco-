@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Header.css'
 
-const WHATSAPP_NUMBER = '50600000000' // TODO: reemplazar con el número real de San Bosco
+const WHATSAPP_NUMBER = '50663024507'
 
 const NAV_LINKS = [
   { href: '#historia', label: 'Nuestra Historia' },
