@@ -3,7 +3,7 @@ import './Ubicaciones.css'
 const LOCACIONES = [
   {
     nombre: 'San Bosco Centro',
-    direccion: 'Mercado Central de San José, San José',
+    direccion: 'Centro de Acosta, San José',
     horario: 'Lun – Sáb: 6:00 a.m. – 5:00 p.m.',
   },
   {
@@ -38,4 +38,3 @@ export default function Ubicaciones() {
     </section>
   )
 }
-
