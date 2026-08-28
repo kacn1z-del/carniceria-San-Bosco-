@@ -29,7 +29,7 @@ export default function Hero() {
           aria-hidden={i !== activo}
         >
           <div className="wrap hero__content">
-            <p className="eyebrow">Mercado Central de San José · Desde 1942</p>
+            <p className="eyebrow">Acosta, San José · Desde 1980</p>
             <h1 className="hero__title">{slide.titulo}</h1>
             <p className="hero__subtitle">
               Tradición carnicera costarricense hecha oficio: selección, corte y
