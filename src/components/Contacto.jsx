@@ -38,8 +38,12 @@ export default function Contacto() {
               <span>+506 6302-4507</span>
             </div>
             <div>
+              <span className="contacto__label">Teléfono</span>
+              <span>2410-0133</span>
+            </div>
+            <div>
               <span className="contacto__label">Correo</span>
-              <span>[info@sanbosco.cr]</span>
+              <span>carniceriasanboscoa@gmail.com</span>
             </div>
             <div>
               <span className="contacto__label">Horario</span>
