@@ -1,7 +1,7 @@
 import { formatoColones } from '../data/productos'
 import './CartDrawer.css'
 
-const WHATSAPP_NUMBER = '50600000000' // TODO: reemplazar con el número real de San Bosco
+const WHATSAPP_NUMBER = '50663024507'
 
 export default function CartDrawer({ abierto, items, onClose, onQuitar, onCambiarCantidad }) {
   const total = items.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
