@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import { categorias, productos, formatoColones } from '../data/productos'
 import './Productos.css'
 
-export default function Productos({ onAddToCart }) {
-  const [categoriaActiva, setCategoriaActiva] = useState('Todos')
-
+export default function Productos({ onAddToCart, categoriaActiva, onCambiarCategoria }) {
   const visibles =
     categoriaActiva === 'Todos'
       ? productos
@@ -25,7 +22,7 @@ export default function Productos({ onAddToCart }) {
                 className={`productos__filtro ${
                   categoriaActiva === cat ? 'productos__filtro--activo' : ''
                 }`}
-                onClick={() => setCategoriaActiva(cat)}
+                onClick={() => onCambiarCategoria(cat)}
               >
                 {cat}
               </button>
