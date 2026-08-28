@@ -1,4 +1,14 @@
 // Contenido de ejemplo — reemplazar con productos, precios y fotos reales.
+// Fotos actuales: banco de imágenes libre (Unsplash), sin marca de agua,
+// solo como referencia temporal.
+
+export const IMAGENES_CATEGORIA = {
+  Res: 'https://images.unsplash.com/photo-1690983322025-aab4f95a0269?auto=format&fit=crop&w=800&q=80',
+  Cerdo: 'https://images.unsplash.com/photo-1602491950780-1c5411ecfdf6?auto=format&fit=crop&w=800&q=80',
+  Pollo: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80',
+  Embutidos: 'https://images.unsplash.com/photo-1624772413714-7e1ea3fbfeaf?auto=format&fit=crop&w=800&q=80',
+}
+
 export const categorias = ['Todos', 'Res', 'Cerdo', 'Pollo', 'Embutidos']
 
 export const productos = [
@@ -9,7 +19,7 @@ export const productos = [
     presentacion: '1 Kg',
     precio: 12500,
     corte: 'Premium',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Res,
   },
   {
     id: 2,
@@ -18,7 +28,7 @@ export const productos = [
     presentacion: '800 g',
     precio: 11800,
     corte: 'Premium',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Res,
   },
   {
     id: 3,
@@ -27,7 +37,7 @@ export const productos = [
     presentacion: '1 Kg',
     precio: 4200,
     corte: 'Clásico',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Cerdo,
   },
   {
     id: 4,
@@ -36,7 +46,7 @@ export const productos = [
     presentacion: '1 Kg',
     precio: 4800,
     corte: 'Clásico',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Cerdo,
   },
   {
     id: 5,
@@ -45,7 +55,7 @@ export const productos = [
     presentacion: '1 Kg',
     precio: 3100,
     corte: 'Clásico',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Pollo,
   },
   {
     id: 6,
@@ -54,7 +64,7 @@ export const productos = [
     presentacion: '1 Kg',
     precio: 2800,
     corte: 'Clásico',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Pollo,
   },
   {
     id: 7,
@@ -63,7 +73,7 @@ export const productos = [
     presentacion: '500 g',
     precio: 3200,
     corte: 'Receta propia',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Embutidos,
   },
   {
     id: 8,
@@ -72,7 +82,7 @@ export const productos = [
     presentacion: '500 g',
     precio: 3500,
     corte: 'Receta propia',
-    imagen: null,
+    imagen: IMAGENES_CATEGORIA.Embutidos,
   },
 ]
 
