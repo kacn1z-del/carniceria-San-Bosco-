@@ -5,25 +5,24 @@ Sitio hecho con **React 19 + Vite**, con la identidad de marca de San Bosco
 
 ## Antes de publicar, reemplazar:
 
-1. **Número de WhatsApp** — buscar `50600000000` en:
-   - `src/components/Header.jsx`
-   - `src/components/Contacto.jsx`
-   - `src/components/CartDrawer.jsx`
+1. **Número de WhatsApp** — ya configurado: +506 6302-4507.
 
-2. **Productos y precios reales** — editar `src/data/productos.js`.
+2. **Facebook** — ya enlazado en Footer y Contacto.
 
-3. **Fotos** — los recuadros con borde punteado ("Foto del local", "Foto")
-   son marcadores de posición. Colocar imágenes reales en `public/` y
-   referenciarlas en los componentes (`Hero.jsx`, `Historia.jsx`,
-   `Productos.jsx`).
+3. **Productos y precios reales** — editar `src/data/productos.js`.
 
-4. **Textos de ejemplo** — buscar `[Contenido de ejemplo` en:
+4. **Fotos** — actualmente se usan fotos genéricas de banco libre (Unsplash)
+   en Hero, Historia y las tarjetas de producto. Reemplazar por fotos reales
+   del local y los cortes en cuanto estén disponibles: las URLs están en
+   `IMAGENES_CATEGORIA` (`src/data/productos.js`) y en `Historia.jsx`.
+
+5. **Textos de ejemplo** — buscar `[Contenido de ejemplo` en:
    - `Historia.jsx`
    - `VisionMision.jsx`
    - `Ubicaciones.jsx`
    - `Contacto.jsx`
 
-5. **Datos de contacto** — teléfono y correo en `Contacto.jsx` y horarios en
+6. **Datos de contacto restantes** — correo y horarios en `Contacto.jsx` y
    `Ubicaciones.jsx`.
 
 ## Publicar
