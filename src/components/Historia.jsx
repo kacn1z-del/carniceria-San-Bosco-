@@ -13,14 +13,13 @@ export default function Historia() {
 
         <div className="historia__grid">
           <div className="historia__text">
-            <p className="historia__lead">Un legado que empezó en 1942</p>
+            <p className="historia__lead">Un legado que empezó en 1980</p>
             <p>
-              La historia de Carnicería San Bosco se remonta a la década de 1940 en
-              el Mercado Central de San José, donde nació como un negocio familiar
-              dedicado por completo al oficio carnicero. Desde entonces, generación
-              tras generación, la casa ha mantenido la misma vocación: seleccionar
-              con cuidado cada corte y ofrecer un trato cercano a quienes llegan
-              buscando calidad.
+              La historia de Carnicería San Bosco comenzó en 1980 en Acosta, donde
+              nació como un negocio familiar dedicado por completo al oficio
+              carnicero. Desde entonces, generación tras generación, la casa ha
+              mantenido la misma vocación: seleccionar con cuidado cada corte y
+              ofrecer un trato cercano a quienes llegan buscando calidad.
             </p>
             <p>
               [Contenido de ejemplo — completar con la historia y datos propios de
