@@ -29,8 +29,13 @@ export default function Historia() {
             </p>
           </div>
 
-          <div className="historia__media" aria-hidden="true">
-            <span>Foto del local / fundadores</span>
+          <div className="historia__media">
+            <img
+              src="https://images.unsplash.com/photo-1584048603508-4b31894439a9?auto=format&fit=crop&w=900&q=80"
+              alt="Mostrador de carnicería"
+              className="historia__img"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
