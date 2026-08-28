@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer__brand">
           <span className="footer__logo-line">CARNICERÍA</span>
           <span className="footer__logo-main">SAN BOSCO</span>
-          <p>Mercado Central de San José · Costa Rica</p>
+          <p>Acosta, San José · Costa Rica</p>
         </div>
 
         <div className="footer__social">
