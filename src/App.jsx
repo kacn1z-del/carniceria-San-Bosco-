@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Historia from './components/Historia.jsx'
@@ -8,11 +8,43 @@ import Ubicaciones from './components/Ubicaciones.jsx'
 import Contacto from './components/Contacto.jsx'
 import Footer from './components/Footer.jsx'
 import CartDrawer from './components/CartDrawer.jsx'
+import AdminPanel from './components/AdminPanel.jsx'
+import ReciboImprimible from './components/ReciboImprimible.jsx'
+import { cargarProductos, guardarProductos } from './utils/inventario'
 
 export default function App() {
+  const [productos, setProductos] = useState([])
   const [cart, setCart] = useState([])
   const [cartAbierto, setCartAbierto] = useState(false)
   const [categoriaActiva, setCategoriaActiva] = useState('Todos')
+  const [vista, setVista] = useState(
+    window.location.hash === '#admin' ? 'admin' : 'sitio'
+  )
+
+  useEffect(() => {
+    setProductos(cargarProductos())
+
+    const alCambiarHash = () => {
+      setVista(window.location.hash === '#admin' ? 'admin' : 'sitio')
+    }
+    window.addEventListener('hashchange', alCambiarHash)
+    return () => window.removeEventListener('hashchange', alCambiarHash)
+  }, [])
+
+  const actualizarInventario = (nuevosProductos) => {
+    setProductos(nuevosProductos)
+    guardarProductos(nuevosProductos)
+  }
+
+  const irAlSitio = () => {
+    window.location.hash = ''
+    setVista('sitio')
+  }
+
+  const irAlAdmin = () => {
+    window.location.hash = 'admin'
+    setVista('admin')
+  }
 
   const agregarAlCarrito = (producto) => {
     setCart((prev) => {
@@ -42,6 +74,17 @@ export default function App() {
   }
 
   const cartCount = cart.reduce((acc, item) => acc + item.cantidad, 0)
+  const cartTotal = cart.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
+
+  if (vista === 'admin') {
+    return (
+      <AdminPanel
+        productos={productos}
+        onGuardarProductos={actualizarInventario}
+        onVolver={irAlSitio}
+      />
+    )
+  }
 
   return (
     <>
@@ -50,6 +93,7 @@ export default function App() {
         <Hero onSelectCategoria={setCategoriaActiva} />
         <Historia />
         <Productos
+          productos={productos}
           onAddToCart={agregarAlCarrito}
           categoriaActiva={categoriaActiva}
           onCambiarCategoria={setCategoriaActiva}
@@ -58,7 +102,7 @@ export default function App() {
         <Ubicaciones />
         <Contacto />
       </main>
-      <Footer />
+      <Footer onAdminClick={irAlAdmin} />
       <CartDrawer
         abierto={cartAbierto}
         items={cart}
@@ -66,6 +110,7 @@ export default function App() {
         onQuitar={quitarDelCarrito}
         onCambiarCantidad={cambiarCantidad}
       />
+      <ReciboImprimible items={cart} total={cartTotal} />
     </>
   )
 }
