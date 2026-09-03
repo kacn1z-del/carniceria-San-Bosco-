@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Header.css'
 
-const WHATSAPP_NUMBER = '50663024507'
+const WHATSAPP_NUMBER = '50683443461'
 
 const NAV_LINKS = [
   { href: '#historia', label: 'Nuestra Historia' },
