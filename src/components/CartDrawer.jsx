@@ -1,7 +1,7 @@
 import { formatoColones } from '../data/productos'
 import './CartDrawer.css'
 
-const WHATSAPP_NUMBER = '50663024507'
+const WHATSAPP_NUMBER = '50683443461'
 
 export default function CartDrawer({ abierto, items, onClose, onQuitar, onCambiarCantidad }) {
   const total = items.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
@@ -87,6 +87,15 @@ export default function CartDrawer({ abierto, items, onClose, onQuitar, onCambia
           >
             Finalizar pedido por WhatsApp
           </a>
+          <button
+            className={`btn btn--outline-oscuro cart-drawer__imprimir ${
+              items.length === 0 ? 'cart-drawer__checkout--deshabilitado' : ''
+            }`}
+            onClick={() => window.print()}
+            disabled={items.length === 0}
+          >
+            🧾 Imprimir Recibo
+          </button>
         </div>
       </aside>
     </>
