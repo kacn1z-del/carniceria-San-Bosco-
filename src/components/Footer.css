@@ -59,3 +59,16 @@
   font-size: 0.8rem;
   color: rgba(250, 248, 245, 0.55);
 }
+
+.footer__admin {
+  background: none;
+  border: none;
+  color: rgba(250, 248, 245, 0.55);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.footer__admin:hover {
+  color: var(--terracotta);
+}
