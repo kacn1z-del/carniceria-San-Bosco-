@@ -1,7 +1,12 @@
-import { categorias, productos, formatoColones } from '../data/productos'
+import { categorias, formatoColones } from '../data/productos'
 import './Productos.css'
 
-export default function Productos({ onAddToCart, categoriaActiva, onCambiarCategoria }) {
+export default function Productos({
+  productos,
+  onAddToCart,
+  categoriaActiva,
+  onCambiarCategoria,
+}) {
   const visibles =
     categoriaActiva === 'Todos'
       ? productos
@@ -61,11 +66,14 @@ export default function Productos({ onAddToCart, categoriaActiva, onCambiarCateg
               </div>
             </article>
           ))}
+
+          {visibles.length === 0 && (
+            <p className="productos__vacio">No hay productos en esta categoría.</p>
+          )}
         </div>
 
         <p className="productos__nota">
-          * Precios y productos de ejemplo — se actualizarán con el catálogo real de
-          San Bosco.
+          * Los productos y precios se administran desde el Panel Admin.
         </p>
       </div>
     </section>
