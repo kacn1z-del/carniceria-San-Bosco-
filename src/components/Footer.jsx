@@ -1,6 +1,6 @@
 import './Footer.css'
 
-export default function Footer() {
+export default function Footer({ onAdminClick }) {
   return (
     <footer className="footer">
       <div className="wrap footer__grid">
@@ -26,7 +26,12 @@ export default function Footer() {
       </div>
       <div className="wrap footer__bottom">
         <p>© {new Date().getFullYear()} Carnicería San Bosco. Todos los derechos reservados.</p>
-        <p>Desarrollo: KCN Studio</p>
+        <p>
+          Desarrollo: KCN Studio ·{' '}
+          <button className="footer__admin" onClick={onAdminClick}>
+            Panel Admin
+          </button>
+        </p>
       </div>
     </footer>
   )
