@@ -139,3 +139,9 @@
   opacity: 0.5;
   pointer-events: none;
 }
+
+.cart-drawer__imprimir {
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
