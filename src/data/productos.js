@@ -1,6 +1,7 @@
-// Contenido de ejemplo — reemplazar con productos, precios y fotos reales.
-// Fotos actuales: banco de imágenes libre (Unsplash), sin marca de agua,
-// solo como referencia temporal.
+// Datos "de fábrica" — se usan solo la primera vez que alguien abre el
+// sitio en un navegador nuevo. Después de eso, el inventario real vive en
+// el navegador (ver src/utils/inventario.js) y se administra desde el
+// Panel Admin (/#admin).
 
 export const IMAGENES_CATEGORIA = {
   Res: 'https://images.unsplash.com/photo-1690983322025-aab4f95a0269?auto=format&fit=crop&w=800&q=80',
@@ -11,7 +12,7 @@ export const IMAGENES_CATEGORIA = {
 
 export const categorias = ['Todos', 'Res', 'Cerdo', 'Pollo', 'Embutidos']
 
-export const productos = [
+export const PRODUCTOS_SEMILLA = [
   {
     id: 1,
     nombre: 'Lomo Ancho de Res',
