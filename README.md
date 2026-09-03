@@ -43,6 +43,10 @@ Desde ahí puedes:
 - Agregar productos nuevos
 - Eliminar productos
 - Restaurar el inventario de ejemplo si algo sale mal
+- Editar los textos de **Nuestra Historia** (frase destacada, párrafos y
+  foto), **Visión**, **Misión** y los 4 **Principios** (ícono, título y
+  texto de cada uno)
+- Restaurar esos textos a los de ejemplo si algo sale mal
 
 ### ⚠️ Limitación importante — sin base de datos
 
