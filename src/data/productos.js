@@ -93,3 +93,4 @@ export const formatoColones = (valor) =>
     currency: 'CRC',
     maximumFractionDigits: 0,
   }).format(valor)
+
