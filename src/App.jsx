@@ -11,9 +11,11 @@ import CartDrawer from './components/CartDrawer.jsx'
 import AdminPanel from './components/AdminPanel.jsx'
 import ReciboImprimible from './components/ReciboImprimible.jsx'
 import { cargarProductos, guardarProductos } from './utils/inventario'
+import { cargarContenido, guardarContenido } from './utils/contenido'
 
 export default function App() {
   const [productos, setProductos] = useState([])
+  const [contenido, setContenido] = useState(null)
   const [cart, setCart] = useState([])
   const [cartAbierto, setCartAbierto] = useState(false)
   const [categoriaActiva, setCategoriaActiva] = useState('Todos')
@@ -23,6 +25,7 @@ export default function App() {
 
   useEffect(() => {
     setProductos(cargarProductos())
+    setContenido(cargarContenido())
 
     const alCambiarHash = () => {
       setVista(window.location.hash === '#admin' ? 'admin' : 'sitio')
@@ -34,6 +37,11 @@ export default function App() {
   const actualizarInventario = (nuevosProductos) => {
     setProductos(nuevosProductos)
     guardarProductos(nuevosProductos)
+  }
+
+  const actualizarContenido = (nuevoContenido) => {
+    setContenido(nuevoContenido)
+    guardarContenido(nuevoContenido)
   }
 
   const irAlSitio = () => {
@@ -76,11 +84,15 @@ export default function App() {
   const cartCount = cart.reduce((acc, item) => acc + item.cantidad, 0)
   const cartTotal = cart.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
 
+  if (!contenido) return null
+
   if (vista === 'admin') {
     return (
       <AdminPanel
         productos={productos}
         onGuardarProductos={actualizarInventario}
+        contenido={contenido}
+        onGuardarContenido={actualizarContenido}
         onVolver={irAlSitio}
       />
     )
@@ -91,14 +103,18 @@ export default function App() {
       <Header cartCount={cartCount} onOpenCart={() => setCartAbierto(true)} />
       <main>
         <Hero onSelectCategoria={setCategoriaActiva} />
-        <Historia />
+        <Historia contenido={contenido.historia} />
         <Productos
           productos={productos}
           onAddToCart={agregarAlCarrito}
           categoriaActiva={categoriaActiva}
           onCambiarCategoria={setCategoriaActiva}
         />
-        <VisionMision />
+        <VisionMision
+          vision={contenido.vision}
+          mision={contenido.mision}
+          principios={contenido.principios}
+        />
         <Ubicaciones />
         <Contacto />
       </main>
@@ -114,4 +130,3 @@ export default function App() {
     </>
   )
 }
-
