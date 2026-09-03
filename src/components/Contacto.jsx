@@ -35,7 +35,8 @@ export default function Contacto() {
           <div className="contacto__datos">
             <div>
               <span className="contacto__label">WhatsApp</span>
-              <span>+506 6302-4507</span>
+             <span>+506 8344-3461</span>
+
             </div>
             <div>
               <span className="contacto__label">Teléfono</span>
