@@ -1,0 +1,87 @@
+.recibo-imprimible {
+  display: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .recibo-imprimible,
+  .recibo-imprimible * {
+    visibility: visible;
+  }
+
+  .recibo-imprimible {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    padding: 16px;
+    font-family: 'Courier New', monospace;
+    color: #000;
+    font-size: 12px;
+  }
+
+  .recibo__header {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .recibo__header h2 {
+    font-size: 15px;
+    margin: 0 0 4px;
+  }
+
+  .recibo__header p {
+    margin: 2px 0;
+    font-size: 11px;
+  }
+
+  .recibo__linea {
+    border-top: 1px dashed #000;
+    margin: 8px 0;
+  }
+
+  .recibo__fecha {
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .recibo__tabla {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .recibo__tabla th {
+    text-align: left;
+    font-size: 11px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+  }
+
+  .recibo__tabla td {
+    font-size: 11px;
+    padding: 4px 0;
+    vertical-align: top;
+  }
+
+  .recibo__tabla td:last-child,
+  .recibo__tabla th:last-child {
+    text-align: right;
+  }
+
+  .recibo__total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .recibo__gracias {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
